@@ -1,17 +1,34 @@
 import { db } from "~/utils/db.server";
-import { sql } from "drizzle-orm";
-import { Note } from "~/schema";
+import { eq, sql } from "drizzle-orm";
+import { Note, User, users, notes } from "~/schema";
 
 export const getNotes = async (userId: string): Promise<Note[]> => {
-  return db.execute(sql`
-    SELECT * FROM notes WHERE user_id = ${userId}`);
+  const userNotes = await db
+    .select()
+    .from(notes)
+    .where(eq(notes.userId, userId))
+    .orderBy(notes.createdAt);
+
+  return userNotes;
 };
 
-export const getNote = async (noteId: string): Promise<Note | null> => {
-  const [note]: Note[] = await db.execute(sql`
-        SELECT * FROM notes WHERE id = ${noteId}`);
+export const getNoteById = async (noteId: string): Promise<Note | null> => {
+  const [note] = await db.select().from(notes).where(eq(notes.id, noteId));
 
   return note;
+};
+
+export const increaseNoteViews = async (noteId: string): Promise<void> => {
+  await db
+    .update(notes)
+    .set({ views: sql`${notes.views} + 1` })
+    .where(eq(notes.id, noteId));
+};
+
+export const getAuthor = async (userId: string): Promise<User> => {
+  const [user] = await db.select().from(users).where(eq(users.id, userId));
+
+  return user;
 };
 
 export const createNote = async (
@@ -19,15 +36,15 @@ export const createNote = async (
   title: string,
   body: string,
 ): Promise<Note> => {
-  const [note]: Note[] = await db.execute(sql`
-    INSERT INTO notes (user_id, title, body)
-    VALUES (${userId}, ${title}, ${body})
-    RETURNING *`);
+  const [note] = await db.insert(notes).values({
+    userId,
+    title,
+    body,
+  });
 
   return note;
 };
 
 export const deleteNote = async (noteId: string): Promise<void> => {
-  await db.execute(sql`
-        DELETE FROM notes WHERE id = ${noteId}`);
+  await db.delete(notes).where(eq(notes.id, noteId));
 };

@@ -20,9 +20,11 @@ export async function signUp(
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
-  const [user]: User[] = await db.execute(
-    sql`insert into users (name, email, password) values (${name}, ${email}, ${hashedPassword}) returning *`,
-  );
+  const [user] = await db.insert(users).values({
+    name,
+    email,
+    password: hashedPassword,
+  });
 
   return { success: true, data: user };
 }
@@ -37,9 +39,7 @@ export async function signIn(
     }
   | { success: true; data: User }
 > {
-  const [user]: User[] = await db.execute(
-    sql`select * from users where email = ${email}`,
-  );
+  const [user] = await db.select().from(users).where(eq(users.email, email));
 
   if (!user) {
     return { success: false, error: "User not found" };
