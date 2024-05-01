@@ -9,7 +9,7 @@
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc",
     "db:migrate": "tsx --env-file=.env app/utils/migrate.ts",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    "format": "prettier --write \"app/**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "dependencies": {
     "@remix-run/css-bundle": "^2.6.0",

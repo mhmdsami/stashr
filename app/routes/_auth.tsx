@@ -14,7 +14,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export default function Auth() {
   return (
-    <main className="h-screen flex flex-col items-center justify-center w-72 mx-auto">
+    <main className="mx-auto flex h-screen w-72 flex-col items-center justify-center">
       <Outlet />
     </main>
   );

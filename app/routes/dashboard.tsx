@@ -17,7 +17,9 @@ export default function DashboardLayout() {
   return (
     <>
       <nav className="flex justify-between p-10">
-        <Link to="/dashboard" className="text-emerald-400 text-4xl font-bold">stashr</Link>
+        <Link to="/dashboard" className="text-4xl font-bold text-emerald-400">
+          stashr
+        </Link>
         <Form method="post" action="/sign-out">
           <Button>Sign Out</Button>
         </Form>
