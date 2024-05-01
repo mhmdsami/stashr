@@ -23,7 +23,7 @@ export function NoteCard({ id, title, body, views }: NoteCardProps) {
   return (
     <NoteCardSkeleton>
       <h2 className="text-mint-400 text-xl font-semibold line-clamp-1 text-ellipsis">{title}</h2>
-      <p className="text-mint-50 mt-2 line-clamp-6 text-ellipsis">{body}</p>
+      <p className="text-mint-50 mt-2 line-clamp-6 text-ellipsis" dangerouslySetInnerHTML={{ __html: body }} />
     </NoteCardSkeleton>
   );
 }

@@ -30,6 +30,15 @@ const SignInSchema = object({
   ]),
 });
 
+const CreateNoteSchema = object({
+  title: string("Title is required", [
+    minLength(3, "Title must be at least 3 characters"),
+  ]),
+  body: string("Body is required", [
+    minLength(3, "Body must be at least 3 characters"),
+  ]),
+});
+
 type ValidatedForm<Schema extends BaseSchema> =
   | {
       success: true;
@@ -63,3 +72,4 @@ const validateForm =
 
 export const validateSignUp = validateForm(SignUpSchema);
 export const validateSignIn = validateForm(SignInSchema);
+export const validateCreateNote = validateForm(CreateNoteSchema);
