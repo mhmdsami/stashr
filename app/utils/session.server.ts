@@ -71,7 +71,7 @@ export async function createUserSession(userId: string, redirectTo?: string) {
   const session = await getSession();
   session.set("userId", userId);
 
-  return redirect(redirectTo ?? "/", {
+  return redirect(redirectTo ?? "/dashboard", {
     headers: {
       "Set-Cookie": await commitSession(session),
     },

@@ -21,3 +21,4 @@ export const notes = pgTable("notes", {
 });
 
 export type User = typeof users.$inferSelect;
+export type Note = typeof notes.$inferSelect;

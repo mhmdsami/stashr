@@ -1,32 +1,16 @@
-import { redirect, LoaderFunction, MetaFunction } from "@remix-run/node";
-import { getUserId } from "~/utils/session.server";
-import { Form } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 import Button from "~/components/button";
-
-export const meta: MetaFunction = () => {
-  return [
-    { title: "Stashr" },
-    { name: "description", content: "Store and share your thoughts" },
-  ];
-};
-
-export const loader: LoaderFunction = async ({ request }) => {
-  const userId = await getUserId(request);
-
-  if (!userId) {
-    return redirect("/sign-in");
-  }
-
-  return null;
-};
 
 export default function Index() {
   return (
-    <div className="flex h-screen flex-col items-center justify-center text-4xl font-bold">
-      Stashr
-      <Form method="post" action="/sign-out">
-        <Button type="submit">Sign Out</Button>
-      </Form>
-    </div>
+    <main className="flex h-screen flex-col items-center justify-center gap-2">
+      <h1 className="text-mint-400 text-4xl font-bold">stashr</h1>
+      <p className="text-mint-100 text-xl font-medium">
+        Store and share your thoughts!
+      </p>
+      <Link to="/sign-up">
+        <Button>Get Started</Button>
+      </Link>
+    </main>
   );
 }

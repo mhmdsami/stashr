@@ -6,7 +6,7 @@ import { Outlet } from "@remix-run/react";
 export const loader: LoaderFunction = async ({ request }) => {
   const userId = await getUserId(request);
   if (userId) {
-    return redirect("/");
+    return redirect("/dashboard");
   }
 
   return null;

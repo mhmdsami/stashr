@@ -19,10 +19,6 @@ body {
   @apply font-body text-mint-50 bg-[#141417];
 }
 
-a {
-  @apply text-mint-50 hover:text-mint-200;
-}
-
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition:
