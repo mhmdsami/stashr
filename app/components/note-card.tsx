@@ -9,7 +9,7 @@ interface NoteCardSkeletonProps {
 
 function NoteCardSkeleton({ children }: NoteCardSkeletonProps) {
   return (
-    <div className="to-mint-900/70 flex h-64 w-64 flex-col rounded-lg border border-gray-700 bg-gradient-to-br from-zinc-900 p-5 hover:cursor-pointer">
+    <div className="to-emerald-900/70 flex h-64 w-64 flex-col rounded-lg border border-emerald-900 bg-gradient-to-bl from-zinc-900 p-5 hover:cursor-pointer">
       {children}
     </div>
   );
@@ -23,11 +23,11 @@ interface NoteCardProps extends Omit<Note, "createdAt" | "updatedAt"> {
 export function NoteCard({ id, title, body, views }: NoteCardProps) {
   return (
     <NoteCardSkeleton>
-      <h2 className="text-mint-400 line-clamp-1 text-ellipsis text-xl font-semibold">
+      <h2 className="text-emerald-400 line-clamp-1 text-xl font-semibold">
         {title}
       </h2>
       <p
-        className="text-mint-50 my-2 line-clamp-6 grow text-ellipsis"
+        className="text-emerald-50 line-clamp-6 grow"
         dangerouslySetInnerHTML={{ __html: body }}
       />
       <div className="flex items-center gap-3 self-end">
@@ -60,9 +60,9 @@ export function NoteCardCreate({ text }: NoteCardCreateProps) {
         to="/dashboard/create"
         className="flex grow items-center justify-center"
       >
-        <CirclePlus className="text-mint-500" width={44} height={44} />
+        <CirclePlus className="text-emerald-500" width={44} height={44} />
       </Link>
-      <p className="text-mint-50 mt-2 text-center text-sm">{text}</p>
+      <p className="text-emerald-50 mt-2 text-center text-sm">{text}</p>
     </NoteCardSkeleton>
   );
 }
