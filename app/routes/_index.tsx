@@ -1,4 +1,7 @@
-import type { MetaFunction } from "@remix-run/node";
+import { redirect, LoaderFunction, MetaFunction } from "@remix-run/node";
+import { getUserId } from "~/utils/session.server";
+import { Form } from "@remix-run/react";
+import Button from "~/components/button";
 
 export const meta: MetaFunction = () => {
   return [
@@ -7,10 +10,23 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export const loader: LoaderFunction = async ({ request }) => {
+  const userId = await getUserId(request);
+
+  if (!userId) {
+    return redirect("/sign-in");
+  }
+
+  return null;
+};
+
 export default function Index() {
   return (
     <div className="flex h-screen flex-col items-center justify-center text-4xl font-bold">
       Stashr
+      <Form method="post" action="/sign-out">
+        <Button type="submit">Sign Out</Button>
+      </Form>
     </div>
   );
 }

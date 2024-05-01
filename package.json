@@ -15,14 +15,22 @@
     "@remix-run/node": "^2.6.0",
     "@remix-run/react": "^2.6.0",
     "@remix-run/serve": "^2.6.0",
+    "bcryptjs": "^2.4.3",
+    "clsx": "^2.1.1",
     "drizzle-orm": "^0.29.3",
+    "drizzle-valibot": "^0.2.0",
     "isbot": "^4.1.0",
     "pg": "^8.11.3",
+    "postgres": "^3.4.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "tailwind-merge": "^2.3.0",
+    "valibot": "^0.30.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.6.0",
+    "@types/bcryptjs": "^2.4.6",
     "@types/pg": "^8.11.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
