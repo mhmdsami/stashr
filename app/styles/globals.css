@@ -16,7 +16,7 @@
 }
 
 body {
-  @apply font-body text-emerald-50 bg-[#141417];
+  @apply font-body text-wewak-50 bg-[#141417];
 }
 
 input:-webkit-autofill,

@@ -9,7 +9,7 @@ interface NoteCardSkeletonProps {
 
 function NoteCardSkeleton({ children }: NoteCardSkeletonProps) {
   return (
-    <div className="flex h-64 w-64 flex-col rounded-lg border border-emerald-900 bg-gradient-to-bl from-zinc-900 to-emerald-900/70 p-5 hover:cursor-pointer">
+    <div className="flex h-64 w-64 flex-col rounded-lg border border-wewak-900 bg-gradient-to-tl from-zinc-900 to-wewak-900/70 p-5 hover:cursor-pointer">
       {children}
     </div>
   );
@@ -23,13 +23,15 @@ interface NoteCardProps extends Omit<Note, "createdAt" | "updatedAt"> {
 export function NoteCard({ id, title, body, views }: NoteCardProps) {
   return (
     <NoteCardSkeleton>
-      <h2 className="line-clamp-1 text-xl font-semibold text-emerald-400">
+      <h2 className="line-clamp-1 text-xl font-semibold text-wewak-400">
         {title}
       </h2>
-      <p
-        className="line-clamp-6 grow text-emerald-50"
-        dangerouslySetInnerHTML={{ __html: body }}
-      />
+      <div className="grow">
+        <p
+          className="line-clamp-6 text-wewak-50"
+          dangerouslySetInnerHTML={{ __html: body }}
+        />
+      </div>
       <div className="flex items-center gap-3 self-end">
         <Clipboard
           size={16}
@@ -60,9 +62,9 @@ export function NoteCardCreate({ text }: NoteCardCreateProps) {
         to="/dashboard/create"
         className="flex grow items-center justify-center"
       >
-        <CirclePlus className="text-emerald-500" width={44} height={44} />
+        <CirclePlus className="text-wewak-500" width={44} height={44} />
       </Link>
-      <p className="mt-2 text-center text-sm text-emerald-50">{text}</p>
+      <p className="mt-2 text-center text-sm text-wewak-50">{text}</p>
     </NoteCardSkeleton>
   );
 }

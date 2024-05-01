@@ -1,7 +1,7 @@
 # stashr
 
 Store and share your thoughts
-![stashr](https://github.com/mhmdsami/stashr/assets/78439283/379ee05c-91b4-4cd9-9579-695ad653a746)
+![stashr](https://github.com/mhmdsami/stashr/assets/78439283/2fe69c3e-057b-45d9-a6ac-c27892933e5e)
 
 ## Development Setup
 
@@ -10,7 +10,7 @@ Store and share your thoughts
 - [Fork](https://github.com/mhmdsami/stashr/fork) the repository
 
 ```bash
-git clone https://github.com/<username>/feedback-api
+git clone https://github.com/<username>/stashr.git
 ```
 
 ### Install dependencies
@@ -40,19 +40,19 @@ pnpm dev
 
 ### Sign Up
 
-![sign-up](https://github.com/mhmdsami/stashr/assets/78439283/b5bdafe7-f3b1-4a59-b747-5c969a51a404)
+![sign-up](https://github.com/mhmdsami/stashr/assets/78439283/1560ce2f-ddd8-43a4-9f41-0a31018d3607)
 
 ### Sign In
 
-![sign-in](https://github.com/mhmdsami/stashr/assets/78439283/2405685e-8f0b-48fc-97be-c689148c87b4)
+![sign-in](https://github.com/mhmdsami/stashr/assets/78439283/dc1fa29c-d73e-4d75-a0b1-66fdc18f49d6)
 
 ### Dashboard
 
-![dashboard](https://github.com/mhmdsami/stashr/assets/78439283/6d0dac77-5266-4bf6-80da-31a0fadf8b9d)
+![dashboard](https://github.com/mhmdsami/stashr/assets/78439283/d4c3e2af-121e-4cd8-a877-e7b30ef42884)
 
 ### Note Editor
 
-![editor](https://github.com/mhmdsami/stashr/assets/78439283/10202ca0-a14a-479b-b18a-01206ffdb8d2)
+![editor](https://github.com/mhmdsami/stashr/assets/78439283/4ece3034-84ac-48f0-ae90-ae69596a1c97)
 
 ## Tech Stack
 

@@ -37,7 +37,7 @@ export default function NoteDisplay() {
   return (
     <>
       <nav className="flex justify-between p-10">
-        <Link to="/" className="text-4xl font-bold text-emerald-400">
+        <Link to="/" className="text-4xl font-bold text-wewak-400">
           stashr
         </Link>
       </nav>
@@ -47,8 +47,8 @@ export default function NoteDisplay() {
             <Eye /> {views}
           </div>
         </div>
-        <h1 className="text-4xl font-semibold text-emerald-50">{title}</h1>
-        <p className="text-sm italic text-emerald-50">
+        <h1 className="text-4xl font-semibold text-wewak-50">{title}</h1>
+        <p className="text-sm italic text-wewak-50">
           Written by {name}{" "}
           {createdAt && `on ${new Date(createdAt).toDateString()}`}
         </p>
