@@ -135,7 +135,7 @@ export default function CreateNote() {
       editorProps={{
         attributes: {
           class:
-            "text-xl h-[50vh] mx-10 focus:border-wewak-600 focus:ring-wewak-600 flex rounded-lg border border-gray-700 bg-zinc-900 px-3 py-2 text-sm transition-colors duration-200 ease-in-out focus:outline-none focus:ring-1",
+            "text-contain text-xl min-h-[65vh] mx-10 focus:border-wewak-600 focus:ring-wewak-600 rounded-lg border border-gray-700 bg-zinc-900 px-3 py-2 text-sm transition-colors duration-200 ease-in-out focus:outline-none focus:ring-1",
         },
       }}
     >

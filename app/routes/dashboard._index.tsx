@@ -37,7 +37,7 @@ export default function Dashboard() {
     <main className="flex flex-col gap-5 px-10">
       <div>
         <h1 className="text-2xl font-semibold text-wewak-50">Your Notes</h1>
-        <div className="mt-5 grid grid-flow-col place-content-start gap-5">
+        <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 place-content-start gap-5">
           {notes.length === 0 ? (
             <NoteCardCreate text="create your first note" />
           ) : (
